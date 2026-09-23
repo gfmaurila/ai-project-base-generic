@@ -1,23 +1,14 @@
-# AGENTS.md — Codex
+# OpenAI Codex / ChatGPT Adapter
 
-Você está trabalhando em um projeto orientado por tarefas.
+Este arquivo é um adaptador. A fonte de verdade está no núcleo compartilhado.
 
-Leia nesta ordem:
+## Leia primeiro
 1. `PROJECT.md`
-2. `AI-WORKFLOW.md`
-3. `PROJECT-STATE.md`
-4. `docs/`
-5. `tasks/CURRENT.md`
+2. `PROJECT-STATE.md`
+3. `AI-WORKFLOW.md`
+4. `ai-core/CONSTITUTION.md`
+5. papel aplicável em `ai-core/roles/`
+6. `ai-core/standards/QUALITY-GATES.md`
+7. `tasks/CURRENT.md`
 
-Regras:
-- Execute SOMENTE a tarefa atual.
-- Preserve arquitetura e contratos existentes.
-- Não faça refatorações fora do escopo sem necessidade comprovada.
-- Não invente requisitos.
-- Use mocks/fakes quando dependências externas não estiverem disponíveis.
-- Gere ou atualize testes para comportamento alterado.
-- Rode as validações aplicáveis antes de declarar PASS.
-- Se houver UI de referência, trate `references/screens/` e `docs/screens/` como contrato visual.
-- Ao final, entregue relatório objetivo: RESULT, FILES CHANGED, TESTS, VALIDATION, PENDING, NEXT SAFE STEP.
-
-As regras compartilhadas em `docs/` e `AI-WORKFLOW.md` têm precedência sobre preferências locais do agente.
+Execute somente a tarefa atual. Preserve trabalho existente. Ao terminar, use `ai-core/contracts/TASK-RESULT.md`.

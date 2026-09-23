@@ -1,30 +1,61 @@
-# AI Project Base — Generic
+# AI Project Base Generic v2 — Multi-AI
 
-Estrutura genérica para desenvolvimento assistido por IA, preparada para:
+Template genérico para desenvolvimento assistido por IA com **uma fonte de verdade** e três executores suportados:
 
 - Claude Code
-- OpenAI Codex
+- OpenAI Codex / ChatGPT
 - GitHub Copilot
 
 ## Princípio central
 
-A documentação do projeto é a fonte de verdade. Os arquivos específicos de cada IA funcionam como adaptadores e apontam para as mesmas regras, estado e tarefas.
+O projeto é **AI Provider Agnostic**. Requisitos, arquitetura, tarefas, estado, papéis, Quality Gates e contratos ficam no repositório e não pertencem a uma IA específica.
 
-## Fluxo recomendado
+```text
+                       AI PROJECT CORE
+                              |
+              +---------------+---------------+
+              |               |               |
+         Claude Code     Codex/ChatGPT   GitHub Copilot
+          CLAUDE.md        AGENTS.md       .github/
+              |               |               |
+              +---------------+---------------+
+                              |
+                     MESMA FONTE DE VERDADE
+```
 
-1. Preencher `PROJECT.md`.
-2. Definir requisitos em `docs/requirements/`.
-3. Definir arquitetura em `docs/architecture/`.
-4. Se houver UI, cadastrar referências em `docs/screens/`.
-5. Criar tarefas a partir de `tasks/TASK-TEMPLATE.md`.
-6. Colocar somente a tarefa atual em `tasks/CURRENT.md`.
-7. Pedir para a IA executar somente a tarefa atual.
-8. Exigir build, testes, validação e atualização do `PROJECT-STATE.md`.
+## Núcleo compartilhado
 
-## Arquivos por IA
+- `PROJECT.md` — definição do projeto
+- `PROJECT-STATE.md` — estado comprovado
+- `AI-WORKFLOW.md` — fluxo oficial
+- `ai-core/CONSTITUTION.md` — regras invariáveis
+- `ai-core/roles/` — papéis lógicos
+- `ai-core/standards/` — Quality Gates e protocolo
+- `ai-core/contracts/` — formato de resultado
+- `tasks/CURRENT.md` — única tarefa em execução
+
+## Adaptadores
 
 - Claude Code: `CLAUDE.md` + `.claude/`
-- Codex: `AGENTS.md` + `.codex/`
+- Codex/ChatGPT: `AGENTS.md` + `.codex/`
 - GitHub Copilot: `.github/copilot-instructions.md` + `.github/instructions/`
 
-Não coloque regras de negócio importantes apenas em arquivos específicos de uma IA.
+## Fluxo
+
+`RESEARCH -> REQUIREMENTS -> ARCHITECTURE -> PLAN -> IMPLEMENT -> TEST -> REVIEW -> DOCUMENT`
+
+## Uso recomendado
+
+1. Preencha `PROJECT.md`.
+2. Registre requisitos e arquitetura.
+3. Cadastre telas/referências quando houver UI.
+4. Crie tarefas usando `tasks/TASK-TEMPLATE.md`.
+5. Coloque somente a tarefa autorizada em `tasks/CURRENT.md`.
+6. Abra o projeto com qualquer uma das três IAs.
+7. Solicite: **"Leia as instruções do projeto e execute SOMENTE a tarefa atual."**
+8. Exija Quality Gates e relatório PASS/PARTIAL/FAIL.
+9. Troque de IA entre tarefas sem alterar a fonte de verdade.
+
+## Regra de ouro
+
+Nunca coloque regra de negócio, requisito, decisão arquitetural ou estado crítico somente em arquivos específicos de Claude, Codex ou Copilot.

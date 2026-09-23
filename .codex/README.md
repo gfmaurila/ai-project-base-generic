@@ -1,5 +1,5 @@
 # Codex Adapter
 
-O Codex deve usar `AGENTS.md` como ponto de entrada e seguir a documentação compartilhada do repositório.
+`AGENTS.md` é o ponto de entrada para Codex. As regras compartilhadas ficam em `ai-core/`.
 
-A pasta existe para futuras configurações específicas do Codex sem duplicar regras de negócio.
+Não copie regras centrais para esta pasta sem necessidade. Use `.codex/` apenas para configurações/adaptações exclusivas do Codex.

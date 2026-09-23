@@ -1,20 +1,9 @@
-# CLAUDE.md — Claude Code
+# Claude Code Adapter
 
-Antes de qualquer implementação, leia:
-- `PROJECT.md`
-- `AI-WORKFLOW.md`
-- `PROJECT-STATE.md`
-- `tasks/CURRENT.md`
-- documentação relevante em `docs/`
+Este arquivo é um adaptador. A fonte de verdade está no núcleo compartilhado.
 
-Trabalhe task-by-task. Não implemente etapas futuras.
+Antes de trabalhar, leia `PROJECT.md`, `PROJECT-STATE.md`, `AI-WORKFLOW.md`, `ai-core/CONSTITUTION.md`, o papel aplicável em `ai-core/roles/`, os Quality Gates e `tasks/CURRENT.md`.
 
-Use os agentes em `.claude/agents/` quando úteis, mantendo a mesma fonte de verdade compartilhada.
+As configurações em `.claude/` complementam o núcleo; em caso de duplicidade, mantenha as regras centrais no `ai-core/` e trate regras específicas do projeto como autoridade superior.
 
-Definition of Done:
-- escopo atendido;
-- build/lint aplicável PASS;
-- testes aplicáveis PASS;
-- revisão de regressão;
-- documentação/estado atualizados;
-- relatório final com PASS, PARTIAL ou FAIL.
+Execute somente a tarefa atual e finalize conforme `ai-core/contracts/TASK-RESULT.md`.
